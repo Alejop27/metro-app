@@ -10,8 +10,8 @@ from fiftyone import ViewField as F
 FIFTYONE_ADDRESS = "0.0.0.0"
 FIFTYONE_PORT = 5151
 
-# 1. Crear estructura unificada
-root_dir = r"d:\CursoJava\Programacion\fiftyone\metro_fiftyone_repo"
+# 1. Crear estructura unificada (ruta dinámica compatible con cualquier SO y VM)
+root_dir = os.path.dirname(os.path.abspath(__file__))
 plugins_dir = os.path.join(root_dir, "fifthy_plugins")
 os.makedirs(plugins_dir, exist_ok=True)
 
@@ -101,11 +101,11 @@ for filepath in all_files:
     sample = fo.Sample(filepath=filepath)
     sample["data_source"] = "official_data"
     
-    # Clasificación por Carpeta
-    path_lower = filepath.lower()
-    if "\\autobus\\" in path_lower:
+    # Clasificación por Carpeta (normalizando separadores para compatibilidad Windows/Linux)
+    path_norm = filepath.replace("\\", "/").lower()
+    if "/autobus/" in path_norm:
         sample["source_type"] = "onboard_bus"
-    elif "\\accidentes\\" in path_lower or "\\trancones\\" in path_lower:
+    elif "/accidentes/" in path_norm or "/trancones/" in path_norm:
         sample["source_type"] = "incident_camera"
     else:
         sample["source_type"] = "station_camera"
