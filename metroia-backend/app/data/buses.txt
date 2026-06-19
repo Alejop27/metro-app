@@ -1,0 +1,3 @@
+{"id": "B1", "route_id": "R1", "capacity": 80, "occupancy": 45, "status": "Normal", "speed_kmh": 32}
+{"id": "B2", "route_id": "R2", "capacity": 80, "occupancy": 78, "status": "Lleno", "speed_kmh": 18}
+{"id": "B3", "route_id": "R3", "capacity": 80, "occupancy": 30, "status": "Normal", "speed_kmh": 40}

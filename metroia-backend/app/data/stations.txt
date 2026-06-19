@@ -1,0 +1,4 @@
+{"id": "S1", "name": "Cabecera", "route_id": "R1", "congestion": "medium", "is_open": true}
+{"id": "S2", "name": "Provenza", "route_id": "R1", "congestion": "high", "is_open": true}
+{"id": "S3", "name": "Cañaveral", "route_id": "R3", "congestion": "low", "is_open": true}
+{"id": "S4", "name": "UIS", "route_id": "R2", "congestion": "medium", "is_open": true}
