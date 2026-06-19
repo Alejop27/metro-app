@@ -1,0 +1,17 @@
+stop_id,stop_name,stop_lat,stop_lon
+1,Parque Estación U.I.S.,7.137735,-73.1164874
+2,Br. Universidad (Cl 11 - Kr 29),7.0782306,-73.125695
+3,Estadio Departamental José Américo Montanini,7.0933163,-73.1083393
+4,Velódromo Alfonso Florez Ortíz,7.0787504,-73.1247042
+5,Br. San Alonso (Cl 14 - Kr 32c),7.1325404,-73.1136878
+6,Quinta Brigada Del Ejército (Kr 33a - Cl 17),7.1322455,-73.1126375
+7,Universidad Cooperativa De Colombia,7.12923,-73.11324
+8,Plaza De Mercado Guarín,7.112411,-73.1104387
+9,Parque Las Palmas,7.0912445,-73.1378813
+10,Centro Comercial Cacique,7.0954127,-73.1071232
+11,Estación De Transferencia Provenza,7.07977,-73.1130886
+12,Centro Comercial La Florida,7.1303038,-73.1059297
+13,Instituto Colombiano De Petróleo,7.0978469,-73.1224402
+14,Portal Piedecuesta,7.1311813,-73.1250327
+15,Piedecuesta Centro,7.0930822,-73.1259107
+16,Br. Hoyo Grande,7.0852766,-73.1312628
