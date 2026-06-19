@@ -1,35 +1,39 @@
 from fastapi import APIRouter, HTTPException, status
-
 from app.controller.prediction_controller import PredictionController
-from app.schemas.prediction_schema import PredictionRequest
-from app.services.prediction_service import PredictionService
+# CORRECCIÓN DE IMPORTACIÓN AQUÍ:
+from app.schemas.prediction_schema import SmartPredictionRequest
 
 router = APIRouter(prefix="/prediction", tags=["Prediction"])
-service = PredictionService()
-
-# Instanciamos el controlador que a su vez inicializa el PredictionService con los .pkl
 controller = PredictionController()
-
 
 @router.get("/")
 def get_all():
-    data = service.get_all()
-    return {"success": True, "message": "OK", "data": data}
+    # Retorna lo que tengas mapeado o un preventivo si está vacío por ahora
+    return {"success": True, "message": "OK", "data": []}
 
-
-@router.post("/live")
-def get_live_prediction(payload: PredictionRequest):
+@router.post("/smart-live")
+def get_smart_prediction(payload: SmartPredictionRequest):
     """
-    Endpoint para obtener el ETA y nivel de ocupación en tiempo real
-    utilizando los modelos de Machine Learning (.pkl) y los datos GTFS.
+    Inferencia de IA contextualizada en el servidor incluyendo analítica de FiftyOne.
     """
     try:
         resultado = controller.get_live_prediction(payload)
-        return {"success": True, "message": "Predicción generada con éxito", "data": resultado}
+        return {"success": True, "message": "Procesado por el servidor con IA", "data": resultado}
     except HTTPException as http_ex:
         raise http_ex
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error inesperado en el servidor: {str(e)}"
+            detail=str(e)
+        )
+
+@router.get("/buses-streaming")
+def get_buses_in_realtime():
+    try:
+        buses = controller.prediction_service.obtener_buses_activos()
+        return {"success": True, "message": "Flota P8 localizada", "data": buses}
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e)
         )
