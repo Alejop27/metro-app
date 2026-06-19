@@ -1,42 +1,32 @@
 from fastapi import FastAPI
 
-from app.routers.routes import router as routes
-
-from app.routers.stations import router as stations
-
-from app.routers.buses import router as buses
-
-from app.routers.prediction import router as prediction
-
-from app.routers.events import router as events
-
-from app.routers.chat import router as chat
-
-from app.routers.gps import router as gps
+from app.routers.route_router import router as route_router
+from app.routers.station_router import router as station_router
+from app.routers.bus_router import router as bus_router
+from app.routers.gps_router import router as gps_router
+from app.routers.prediction_router import router as prediction_router
+from app.routers.chat_router import router as chat_router
+from app.routers.heatmap_router import router as heatmap_router
+from app.routers.event_router import router as event_router
 
 app = FastAPI(
-    title="MetroIA",
-    version="1.0"
+    title="MetroIA API",
+    version="1.0.0"
 )
 
-app.include_router(routes)
-
-app.include_router(stations)
-
-app.include_router(buses)
-
-app.include_router(prediction)
-
-app.include_router(events)
-
-app.include_router(chat)
-
-app.include_router(gps)
+app.include_router(route_router)
+app.include_router(station_router)
+app.include_router(bus_router)
+app.include_router(gps_router)
+app.include_router(prediction_router)
+app.include_router(chat_router)
+app.include_router(heatmap_router)
+app.include_router(event_router)
 
 
-@app.get("/health")
-def health():
+@app.get("/")
+def root():
     return {
-        "success": True,
-        "message": "MetroIA Running"
+        "message": "MetroIA Backend",
+        "status": "running"
     }
