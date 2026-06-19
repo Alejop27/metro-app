@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# FiftyOne / Data local
+# Se excluye la carpeta data/ para no subir archivos binarios pesados (imágenes sintéticas y modelos) a GitHub
+data/
