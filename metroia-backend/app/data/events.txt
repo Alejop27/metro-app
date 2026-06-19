@@ -1,0 +1,2 @@
+{"id": "E1", "type": "Accidente", "description": "Choque en Cabecera", "active": true, "route_id": "R1"}
+{"id": "E2", "type": "Concierto", "description": "Evento en Parque Bonilla", "active": false, "route_id": "R2"}

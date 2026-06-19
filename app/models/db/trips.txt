@@ -1,3 +1,0 @@
-route_id,service_id,trip_id
-P8,DAILY,P8_OUT
-P8,DAILY,P8_IN

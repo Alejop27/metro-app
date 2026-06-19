@@ -1,0 +1,3 @@
+{"id": "R1", "name": "Metrolínea T1", "origin": "Floridablanca", "destination": "Cabecera", "active": true}
+{"id": "R2", "name": "Metrolínea T2", "origin": "Lagos", "destination": "UIS", "active": true}
+{"id": "R3", "name": "Metrolínea T3", "origin": "Provenza", "destination": "Cañaveral", "active": true}

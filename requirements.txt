@@ -1,9 +1,2 @@
 fastapi
 uvicorn
-firebase-admin
-python-dotenv
-openai
-httpx
-pydantic
-numpy
-pandas
