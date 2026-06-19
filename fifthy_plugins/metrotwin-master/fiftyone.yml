@@ -1,0 +1,7 @@
+name: "metrotwin_master"
+version: "1.0.0"
+description: "Master plugin for MetroTwin SITM"
+fiftyone:
+  version: ">=0.21.0"
+operators:
+  - run_analytics_engine
