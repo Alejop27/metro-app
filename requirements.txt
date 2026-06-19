@@ -1,0 +1,11 @@
+# Requisitos básicos para la integración y visualización con FiftyOne
+fiftyone>=0.21.0
+
+# Manipulación de datos y utilidades (habituales en proyectos de ciencia de datos)
+numpy
+pandas
+Pillow
+
+# Requisitos para ejecutar/cargar los modelos serializados (.pkl) en el backend si es necesario
+scikit-learn
+joblib

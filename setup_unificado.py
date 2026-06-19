@@ -4,6 +4,12 @@ import random
 import fiftyone as fo
 from fiftyone import ViewField as F
 
+# --- CONFIGURACIÓN DE RED Y ENTORNO ---
+# Cambia "0.0.0.0" por una IP específica si lo deseas (e.g. "192.168.1.50")
+# "0.0.0.0" permite que FiftyOne escuche en todas las interfaces de red locales
+FIFTYONE_ADDRESS = "0.0.0.0"
+FIFTYONE_PORT = 5151
+
 # 1. Crear estructura unificada
 root_dir = r"d:\CursoJava\Programacion\fiftyone\metro_fiftyone_repo"
 plugins_dir = os.path.join(root_dir, "fifthy_plugins")
@@ -145,6 +151,6 @@ dataset.save_view("Riesgo_Critico_Retrasos", view_high_risk)
 view_critical = dataset.match(F("crowd_level") == "critical")
 dataset.save_view("Aglomeraciones_Criticas", view_critical)
 
-print("[*] Unificación completada. Levantando FiftyOne...")
-session = fo.launch_app(dataset, port=5151)
+print(f"[*] Unificación completada. Levantando FiftyOne en http://{FIFTYONE_ADDRESS}:{FIFTYONE_PORT}...")
+session = fo.launch_app(dataset, port=FIFTYONE_PORT, address=FIFTYONE_ADDRESS)
 session.wait()
